@@ -1,0 +1,11 @@
+image: python:3.9  # Base image with Python pre-installed
+
+pipelines:
+  default:
+    - step:
+        name: Install and Test
+        caches:
+          - pip
+        script:
+          - pip install -r requirements.txt  # Install dependencies
+          - pytest                          # Run your tests
